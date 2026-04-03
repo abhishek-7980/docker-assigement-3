@@ -1,5 +1,5 @@
 pipeline{
-	agent any {
+	agent any 
                
 		stages {
                      stage ('Clone Git repo'){
@@ -13,7 +13,7 @@ pipeline{
                             sh 'docker rm -f c1 c2 c3 || true'         
                            }
 			}
-			stage ( 'Volume Create for Container'){
+			stage ( 'Volume Create for  Container Q1'){
 			  steps{
 				sh 'docker volume create Q1-container '
 			    }	
@@ -26,7 +26,7 @@ pipeline{
 			    sh 'docker exec c1 chmod 777 -R /usr/local/apache2/htdocs/index.html'
 				}
 			}
-			stage ('Volume Create for Container')	{
+			stage ('Volume Create for Container Q2')	{
 			  steps {
 			     sh 'docker volume create Q2-container'
 			    }
@@ -38,7 +38,7 @@ pipeline{
 			    sh 'docker exec c2 chmod 777 -R /usr/local/apache2/htdocs/index.html'	
 			    }
 			}
-			stage ('Volume Create for Container')	{
+			stage ('Volume Create for Container Q3')	{
 			  steps {
 			     sh 'docker volume create Q3-container'
 			    }
@@ -48,10 +48,10 @@ pipeline{
 			  steps {
   			     sh 'docker run -dp 9080:80 -v Q2-container:/usr/local/apache2/htdocs --name c3 httpd '
 			     sh 'docker cp index.html c3:/usr/local/apache2/htdocs/index.html'
-			     sh 'docker exec c3 chmod 777 -R c3:/usr/local/apache2/htdocs/index.html'
+			     sh 'docker exec c3 chmod 777 -R /usr/local/apache2/htdocs/index.html'
 			  }
 			}							
-       }
 
    }
 }
+

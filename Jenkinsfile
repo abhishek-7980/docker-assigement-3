@@ -1,10 +1,10 @@
 pipeline{
-	any agent{
+	agent any {
                
 		stages {
                      stage ('Clone Git repo'){
                         steps{
-			    sh git branch: 'main' , url: 'https://github.com/abhishek-7980/docker-assigement-3.git'
+			    git branch: 'main' , url: 'https://github.com/abhishek-7980/docker-assigement-3.git'
 			  }
 			}
 		
@@ -22,8 +22,8 @@ pipeline{
 			  steps{
 			    sh 'git checkout 2026-Q1'
 			    sh 'docker run -dp 80:80 -v Q1-container:/usr/local/apache2/htdocs --name c1 httpd'
-			    sh 'docker cp index.html c1:/usr/local/apace2/htdocs/index.html'
-			    sh 'docker exec chomd 777 -R /usr/local/apace2/htdocs/index.html'
+			    sh 'docker cp index.html c1:/usr/local/apache2/htdocs/index.html'
+			    sh 'docker exec c1 chmod 777 -R /usr/local/apache2/htdocs/index.html'
 				}
 			}
 			stage ('Volume Create for Container')	{
@@ -35,7 +35,7 @@ pipeline{
 			  steps {
 			    sh 'docker run -dp 90:80 -v Q2-container:/usr/local/apache2/htdocs --name c2 httpd '
 			    sh 'docker cp index.html  c2:/usr/local/apache2/htdocs/index.html'			   
-			    sh 'docker exec chmod 777 -R /usr/local/apache2/htdocs/index.html'	
+			    sh 'docker exec c2 chmod 777 -R /usr/local/apache2/htdocs/index.html'	
 			    }
 			}
 			stage ('Volume Create for Container')	{
@@ -48,10 +48,10 @@ pipeline{
 			  steps {
   			     sh 'docker run -dp 9080:80 -v Q2-container:/usr/local/apache2/htdocs --name c3 httpd '
 			     sh 'docker cp index.html c3:/usr/lib/apache2/htdocs/index.html'
-			     sh 'docker exec chmod 777 -R c3:/usr/lib/apache2/htdocs/index.html'
+			     sh 'docker exec c3 chmod 777 -R c3:/usr/lib/apache2/htdocs/index.html'
 			  }
 			}							
-          }
+       }
 
-    } 
+   }
 }

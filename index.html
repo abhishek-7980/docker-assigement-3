@@ -1,69 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechNova | Premium Mobile Store</title>
+    <title>Tea Shop</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; background-color: #f8f9fa; }
-        header { background: #1a1a1a; color: #00d4ff; padding: 1.5rem; text-align: center; }
-        nav { background: #333; padding: 10px; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-size: 0.9rem; }
-        .hero { background: #000; color: white; text-align: center; padding: 60px 20px; }
-        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
-        .device-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .device-card { background: white; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .price { font-size: 1.4rem; font-weight: bold; color: #1a1a1a; margin: 10px 0; }
-        .buy-btn { background: #00d4ff; color: #000; border: none; padding: 10px 25px; border-radius: 5px; font-weight: bold; cursor: pointer; }
-        footer { background: #1a1a1a; color: #888; text-align: center; padding: 2rem; margin-top: 50px; }
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #6b4f4f;
+            color: white;
+            padding: 15px;
+        }
+        .menu {
+            margin: 20px;
+        }
+        .item {
+            background: white;
+            padding: 10px;
+            margin: 10px auto;
+            width: 300px;
+            border-radius: 8px;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #6b4f4f;
+            color: white;
+        }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>TECH<span style="color:white">NOVA</span></h1>
-    </header>
+<header>
+    <h1>☕ Welcome to Abhi Tea Shop</h1>
+    <p>Fresh Tea, Happy Life!</p>
+</header>
 
-    <nav>
-        <a href="#">Smartphones</a>
-        <a href="#">Tablets</a>
-        <a href="#">Accessories</a>
-        <a href="#">Support</a>
-    </nav>
+<div class="menu">
+    <h2>Our Menu</h2>
 
-    <section class="hero">
-        <h2>Next-Gen Mobility</h2>
-        <p>The latest flagships are here. Upgrade your world.</p>
-    </section>
-
-    <div class="container">
-        <div class="device-grid">
-            <div class="device-card">
-                <h3>Titan Pro 15</h3>
-                <p>OLED Display | 5G | 256GB</p>
-                <p class="price">$999</p>
-                <button class="buy-btn">View Details</button>
-            </div>
-            <div class="device-card">
-                <h3>Nexus Z Fold</h3>
-                <p>Foldable | 12GB RAM | AI Camera</p>
-                <p class="price">$1,299</p>
-                <button class="buy-btn">View Details</button>
-            </div>
-            <div class="device-card">
-                <h3>Pulse Lite</h3>
-                <p>Compact | Long Battery | 4G</p>
-                <p class="price">$349</p>
-                <button class="buy-btn">View Details</button>
-            </div>
-        </div>
+    <div class="item">
+        <h3>Masala Tea</h3>
+        <p>Price: ₹20</p>
     </div>
 
-    <footer>
-        <p>&copy; 2026 TechNova Mobile | Authorized Reseller</p>
-    </footer>
+    <div class="item">
+        <h3>Ginger Tea</h3>
+        <p>Price: ₹15</p>
+    </div>
+
+    <div class="item">
+        <h3>Green Tea</h3>
+        <p>Price: ₹25</p>
+    </div>
+
+    <div class="item">
+        <h3>Black Tea</h3>
+        <p>Price: ₹10</p>
+    </div>
+</div>
+
+<footer>
+    <p>📍 Location: Nashik</p>
+    <p>📞 Contact: 9876543210</p>
+</footer>
 
 </body>
 </html>
-
 
